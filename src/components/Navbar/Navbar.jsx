@@ -15,12 +15,20 @@ const Navbar = () => {
         </NavLink>
         </li>
         <li>   <NavLink
-            to="/kk"
+            to="/addItem"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : ""
             }
         >
-            Home
+            Add Product
+        </NavLink></li>
+        <li>   <NavLink
+            to="/login"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+            }
+        >
+           Log In
         </NavLink></li>
 
     </>
