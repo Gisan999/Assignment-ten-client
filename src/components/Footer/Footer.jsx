@@ -4,10 +4,10 @@ const Footer = () => {
     return (
         <div>
             <div className="max-w-screen-xl mx-auto">
-                <footer className="footer p-10  border-8 flex justify-around">
-                    <aside>
+                <footer className="footer pr-10  py-20 flex justify-between">
+                    <aside className='space-y-6'>
                        <img src={logo} alt="" />
-                        <p>Shofy Industries Ltd.<br />Providing reliable tech since 2008</p>
+                        <p>Shofy Industries Ltd.<br /> <br />Providing reliable tech since 2008</p>
                     </aside>
                     <nav>
                         <header className="footer-title">Social</header>

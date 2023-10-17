@@ -30,79 +30,42 @@ const AddProduct = () => {
 
     return (
         <div>
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:p-8 h-screen animate-pulse bg-gradient-to-br from-purple-400 to-indigo-900">
-      <div className="max-w-md bg-white p-8 rounded-lg shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-40">
-        <h2 className="text-3xl font-bold mb-6 text-center text-white">Product Details</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <label className="text-gray-700">Image:</label>
-          <input
-            type="text"
-            name="image"
-          
-            className="mt-1 p-2 border border-gray-300 block w-full rounded-md"
-          />
-          <label className="text-gray-700">Name:</label>
-          <input
-            type="text"
-            name="name"
-        
-            className="mt-1 p-2 border border-gray-300 block w-full rounded-md"
-          />
-          <label className="text-gray-700">Brand Name:</label>
-          <input
-            type="text"
-            name="brandName"
-          
-            className="mt-1 p-2 border border-gray-300 block w-full rounded-md"
-          />
-          <button
-            type="submit"
-            className="mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full"
-          >
-            Add
-          </button>
-        </form>
-      </div>
-      <div className="max-w-md bg-white p-8 rounded-lg shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-40">
-        <h2 className="text-3xl font-bold mb-6 text-center text-white">Product Description</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <label className="text-gray-700">Type:</label>
-          <input
-            type="text"
-            name="type"
-           
-            className="mt-1 p-2 border border-gray-300 block w-full rounded-md"
-          />
-          <label className="text-gray-700">Price:</label>
-          <input
-            type="text"
-            name="price"
-          
-            className="mt-1 p-2 border border-gray-300 block w-full rounded-md"
-          />
-          <label className="text-gray-700">Short Description:</label>
-          <input
-            type="text"
-            name="shortDescription"
-          
-            className="mt-1 p-2 border border-gray-300 block w-full rounded-md"
-          />
-          <label className="text-gray-700">Rating:</label>
-          <input
-            type="text"
-            name="rating"
-          
-            className="mt-1 p-2 border border-gray-300 block w-full rounded-md"
-          />
-          <button
-            type="submit"
-            className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
-          >
-            Add
-          </button>
-        </form>
-      </div>
-    </div>
+         
+         <form onSubmit={handleSubmit}>
+                           <div className="mt-4">
+                                <label className="block text-gray-700 text-sm font-bold mb-2">Your Name</label>
+                                <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="text"
+                                name='name'
+                                required
+
+                                />
+                            </div>
+                            <div className="mt-4">
+                                <label className="block text-gray-700 text-sm font-bold mb-2">Photo URL</label>
+                                <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="text"
+                                name='photo'
+                                required />
+                            </div>
+                            <div className="mt-4">
+                                <label className="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
+                                <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email"
+                                name='email'
+                                required />
+                            </div>
+                            <div className="mt-4">
+                                <div className="flex justify-between">
+                                    <label className="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                                   
+                                </div>
+                                <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password"
+                                name='password'
+                                required />
+                            </div>
+                            <div className="mt-8">
+                                <button className="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Registration</button>
+                            </div>
+
+                           </form>
         </div>
     );
 };

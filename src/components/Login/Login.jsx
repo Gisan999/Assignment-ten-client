@@ -1,12 +1,23 @@
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png'
 
 const Login = () => {
+
+
+    const handleLoginValue = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+    }
+
     return (
         <div>
             <div>
               
                 <div className=" bg-gray-100 text-gray-900 flex justify-center py-10">
-                    <div className="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+                    <div className="container m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
                         <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
                             <div className='flex justify-center'>
                                 <img src={logo}
@@ -50,12 +61,19 @@ const Login = () => {
                                     </div>
 
                                     <div className="mx-auto max-w-xs">
-                                        <input
+                                        
+                                       <form onSubmit={handleLoginValue}>
+
+                                       <input
                                             className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                                            type="email" placeholder="Email" />
+                                            type="email" 
+                                            name='email'
+                                            placeholder="Email" />
                                         <input
                                             className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                                            type="password" placeholder="Password" />
+                                            type="password" 
+                                            name='password'
+                                            placeholder="Password" />
                                         <button
                                             className="mt-5 tracking-wide font-semibold bg-green-400 text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                                             <svg className="w-6 h-6 -ml-2" fill="none" stroke="currentColor" strokeWidth="2"
@@ -68,15 +86,13 @@ const Login = () => {
                                                 Sign In
                                             </span>
                                         </button>
-                                        <p className="mt-6 text-xs text-gray-600 text-center">
-                                            I agree to abide by Cartesian Kinetics
-                                            <a href="#" className="border-b border-gray-500 border-dotted">
-                                                Terms of Service
-                                            </a>
-                                            and its
-                                            <a href="#" className="border-b border-gray-500 border-dotted">
-                                                Privacy Policy
-                                            </a>
+
+                                       </form>
+
+
+                                        <p className="mt-6  text-gray-600 text-center">
+                                        You don`t have an account. <br />
+                                         <Link className='text-lg font-medium text-blue-500 hover:underline' to={"/registration"}>Registration</Link>
                                         </p>
                                     </div>
                                 </div>
