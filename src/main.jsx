@@ -10,27 +10,30 @@ import Home from './components/Home/Home';
 import AddProduct from './components/AddProduct/AddProduct';
 import Login from './components/Login/Login';
 import Registration from './components/Registration/Registration';
+import ErrorPage from './components/ErrorPage/ErrorPage';
+import AuthProvider from './Provider/AuthProvider';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root/>,
+    element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
-        element: <Home/>
+        element: <Home />
       },
       {
         path: "/addItem",
-        element: <AddProduct/>
+        element: <AddProduct />
       },
       {
         path: "/login",
-        element: <Login/>
+        element: <Login />
       },
       {
         path: "/registration",
-        element:<Registration/>
+        element: <Registration />
       }
     ]
   },
@@ -38,6 +41,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-       <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

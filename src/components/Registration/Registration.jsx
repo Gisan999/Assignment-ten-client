@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
+import { useState } from 'react';
+import Swal from 'sweetalert2';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Registration = () => {
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleRegistrationValue = (event) => {
         event.preventDefault();
@@ -10,8 +14,59 @@ const Registration = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+        const check = event.target.terms.checked
+
+        if (password.length < 6) {
+           Swal.fire({
+                position: 'center',
+
+                title:'Password must be at least six digits long',
+                icon: 'warning',
+                showConfirmButton: false,
+                timer: 2000
+            })
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            Swal.fire({
+                position: 'center',
+
+                title: 'Password must be at least one uppercase letter',
+                icon: 'warning',
+                showConfirmButton: false,
+                timer: 2000
+            })
+            return;
+        }
+        else if (!/[!@#$%^&*_+?><|/]/.test(password)) {
+            Swal.fire({
+                position: 'center',
+
+                title: 'Password must contain at least one special character',
+                icon: 'warning',
+                showConfirmButton: false,
+                timer: 2000
+            })
+            return;
+        }
+        else if (!check) {
+            Swal.fire({
+                position: 'center',
+
+                title: 'Please accept our terms and conditions',
+                icon: 'warning',
+                showConfirmButton: false,
+                timer: 2000
+            })
+
+            return;
+        }
+
         console.log(name, photo, email, password);
+
     }
+
+
 
     return (
         <div>
@@ -21,7 +76,7 @@ const Registration = () => {
                         <div className="hidden lg:block lg:w-1/2 bg-cover"
                             style={{ backgroundImage: `url('https://images.unsplash.com/photo-1546514714-df0ccc50d7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80')` }}>
                         </div>
-                        <div className="w-full p-12 lg:py-28 lg:w-1/2">
+                        <div className="w-full border-4 p-12 lg:py-28 lg:w-1/2">
                             <div className='flex justify-center pb-5'>
                                 <img src={logo} alt="" />
                             </div>
@@ -54,14 +109,27 @@ const Registration = () => {
                                         name='email'
                                         required />
                                 </div>
-                                <div className="mt-4">
+                                <div className="mt-4 relative">
                                     <div className="flex justify-between">
                                         <label className="block text-gray-700 text-sm font-bold mb-2">Password</label>
 
                                     </div>
-                                    <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password"
+                                    <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type={showPassword ? "text" : "password"}
                                         name='password'
                                         required />
+                                    <span className="absolute bottom-3 right-5" onClick={() => setShowPassword(!showPassword)}>
+                                        {
+                                            showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                        }
+                                    </span>
+                                </div>
+                                <div className="mt-4 items-center flex">
+
+                                    <input
+                                        type="checkbox" name="terms" id="terms" />
+                                    <label
+                                        className="ml-2"
+                                        htmlFor="terms">Accept Out <a className="font-medium hover:underline">Terms And Conditions</a></label>
                                 </div>
                                 <div className="mt-8">
                                     <button className="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Registration</button>
