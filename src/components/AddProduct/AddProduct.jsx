@@ -34,7 +34,7 @@ const AddProduct = () => {
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
             }}
-            className=" px-5 lg:px-0 ">
+            className=" px-5 lg:px-0">
             <div className="max-w-screen-xl mx-auto p-5 bg-gray-300 bg-transparent backdrop-blur-lg pb-10 lg:py-24 border border-white">
                 <div>
                     <h2 className='text-white text-3xl md:text-5xl font-bold font-mono text-center py-12'>Add Your Product</h2>
@@ -46,7 +46,7 @@ const AddProduct = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
                         <div className="mt-4">
                             <label className="block text-white text-sm font-bold mb-2">Image URL</label>
-                            <input className="bg-gray-200 text-black font-medium focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="url"
+                            <input className="bg-gray-100 text-black font-medium focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="url"
                                 name='image'
 
 
@@ -76,7 +76,7 @@ const AddProduct = () => {
 
                         <div className="mt-4">
                             <label className="block text-white text-sm font-bold mb-2">Price</label>
-                            <input className="bg-gray-200 text-black font-medium focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="number"
+                            <input className="bg-gray-100 text-black font-medium focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="number"
                             placeholder='$ ?'
                                 name='price'
                             />
@@ -102,7 +102,7 @@ const AddProduct = () => {
 
                         <div className="mt-4">
                             <label className="block text-white text-sm font-bold mb-2">Short Description</label>
-                            <input className="bg-gray-200 text-black font-medium focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="text"
+                            <input className="bg-gray-100 text-black font-medium focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="text"
                                 name='shortDescription'
                             />
                         </div>
@@ -111,7 +111,7 @@ const AddProduct = () => {
                                 <label className="block text-white text-sm font-bold mb-2">Rating</label>
 
                             </div>
-                            <input className="bg-gray-200 text-black font-medium focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="number"
+                            <input className="bg-gray-100 text-black font-medium focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="number"
                                 placeholder='For example = (9/10)'
                                 name='rating'
                             />

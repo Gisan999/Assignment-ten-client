@@ -3,7 +3,7 @@
       "id": 1,
       "name": "Apple",
       "category": "Phone",
-      "image": "https://i.ibb.co/7JcMr7x/apple.png",
+      "image": "https://i.ibb.co/sR7KmTK/apple.jpg",
       "slider1": "https://i.ibb.co/nD4WW8B/apple1.jpg",
       "slider2": "https://i.ibb.co/z65rF9H/apple2.jpg",
       "slider3": "https://i.ibb.co/phT0p1c/apple3.png"
@@ -12,7 +12,7 @@
       "id": 2,
       "name": "Google",
       "category": "Phone",
-      "image": "https://i.ibb.co/0jS9yBv/google.png",
+      "image": "https://i.ibb.co/9wsj09H/google9.jpg",
       "slider1": "https://i.ibb.co/JrYyC7V/google1.jpg",
       "slider2": "https://i.ibb.co/CmnVpV7/google2.jpg",
       "slider3": "https://i.ibb.co/2KzqSTj/google3.jpg"
@@ -21,7 +21,7 @@
       "id": 3,
       "name": "Huawei",
       "category": "Phone",
-      "image": "https://i.ibb.co/2FdS2Hm/huawei.png",
+      "image": "https://i.ibb.co/b5Jn8CF/huawei9.webp",
       "slider1": "https://i.ibb.co/X2CBF9C/huawei1.jpg",
       "slider2": "https://i.ibb.co/LJR44mf/huawei2.jpg",
       "slider3": "https://i.ibb.co/bmqGYY4/huawei3.jpg"
@@ -30,7 +30,7 @@
       "id": 4,
       "name": "Lenovo",
       "category": "Computer",
-      "image": "https://i.ibb.co/ZS3Nqbh/lenovo.png",
+      "image": "https://i.ibb.co/SQntVyB/lenovo9.jpg",
       "slider1": "https://i.ibb.co/WgpL0kd/lenovo1.jpg",
       "slider2": "https://i.ibb.co/bWnzFgY/lenovo2.png",
       "slider3": "https://i.ibb.co/XXbVTdH/lenovo3.png"
@@ -39,7 +39,7 @@
       "id": 5,
       "name": "Oneplus",
       "category": "Phone",
-      "image": "https://i.ibb.co/jLPQc54/oneplus.png",
+      "image": "https://i.ibb.co/tLH1WJp/oneplus9.jpg",
       "slider1": "https://i.ibb.co/y8nf5H2/oneplus1.jpg",
       "slider2": "https://i.ibb.co/FBkbXq5/oneplus2.jpg",
       "slider3": "https://i.ibb.co/kh3pwYY/oneplus3.jpg"
@@ -48,7 +48,7 @@
       "id": 6,
       "name": "Tesla",
       "category": "Phone",
-      "image": "https://i.ibb.co/48t8RmB/tesla.png",
+      "image": "https://i.ibb.co/F8FMLzf/tesla9.png",
       "slider1": "https://i.ibb.co/xhCkGWG/tesla1.jpg",
       "slider2": "https://i.ibb.co/SyKPvfg/tesla2.jpg",
       "slider3": "https://i.ibb.co/c2S1CCy/tesla3.jpg"

@@ -12,6 +12,7 @@ import Login from './components/Login/Login';
 import Registration from './components/Registration/Registration';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import AuthProvider from './Provider/AuthProvider';
+import BrandDetails from './components/BrandDetails/BrandDetails';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />
+        element: <Home />,
+        loader: ()=> fetch('/brand.json')
       },
       {
         path: "/addItem",
@@ -34,6 +36,11 @@ const router = createBrowserRouter([
       {
         path: "/registration",
         element: <Registration />
+      },
+      {
+        path: '/brandDetails/:id',
+        element: <BrandDetails/>,
+        loader: ()=> fetch('/brand.json')
       }
     ]
   },

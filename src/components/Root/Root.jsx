@@ -7,8 +7,10 @@ const Root = () => {
     return (
         <div>
             <Navbar />
-            <Outlet />
-            <Footer />
+            <div className="mt-6">
+                <Outlet />
+                <Footer />
+            </div>
         </div>
     );
 };
