@@ -13,10 +13,11 @@ import Registration from './components/Registration/Registration';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import AuthProvider from './Provider/AuthProvider';
 import BrandDetails from './components/BrandDetails/BrandDetails';
-// import Products from './components/Products/Products';
 import UpdateProduct from './components/UpdateProduct/UpdateProduct';
 // import BrandCard from './components/BrandCard/BrandCard';
 import AddBrand from './AddBrand/AddBrand';
+import ProductDetails from './components/Products/ProductDetails';
+import MyCart from './MyCart/MyCart';
 
 
 const router = createBrowserRouter([
@@ -47,10 +48,11 @@ const router = createBrowserRouter([
         element: <BrandDetails />,
         loader: ({params})=>fetch(`http://localhost:5000/brand/${params.id}`)
       },
-      // {
-      //   path: "/products",
-      //   element: <Products />,
-      // },
+      {
+        path: "/products/:id",
+        element: <ProductDetails />,
+        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
+      },
       {
         path: '/update/:id',
         element: <UpdateProduct />,
@@ -64,6 +66,10 @@ const router = createBrowserRouter([
       {
         path:"/addBrand",
         element: <AddBrand></AddBrand>
+      },
+      {
+        path: '/myCart',
+        element: <MyCart/>
       }
      
     ]

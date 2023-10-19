@@ -54,7 +54,8 @@ const Product = ({ product }) => {
                           
                         </div>
                         <div className="flex justify-around mt-4">
-                            <button className="btn btn-outline btn-info px-8  btn-sm">Details</button>
+                          <Link to={`/products/${_id}`}>
+                          <button className="btn btn-outline btn-info px-8  btn-sm">Details</button></Link>
                           <Link to={`/update/${_id}`}>
                           <button className="btn btn-outline btn-secondary px-8  btn-sm">Update</button></Link>
                         </div>

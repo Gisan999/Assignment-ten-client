@@ -24,14 +24,14 @@ const Navbar = () => {
             Add Product
         </NavLink></li>
 
-        {/* <li>   <NavLink
-            to="/products"
+        <li>   <NavLink
+            to="/myCart"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : ""
             }
         >
-            Shopping
-        </NavLink></li> */}
+            My Cart
+        </NavLink></li>
 
         <li>   <NavLink
             to="/login"
