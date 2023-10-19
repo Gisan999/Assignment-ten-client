@@ -14,6 +14,7 @@ const Navbar = () => {
             Home
         </NavLink>
         </li>
+
         <li>   <NavLink
             to="/addItem"
             className={({ isActive, isPending }) =>
@@ -22,6 +23,16 @@ const Navbar = () => {
         >
             Add Product
         </NavLink></li>
+
+        {/* <li>   <NavLink
+            to="/products"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+            }
+        >
+            Shopping
+        </NavLink></li> */}
+
         <li>   <NavLink
             to="/login"
             className={({ isActive, isPending }) =>
@@ -29,6 +40,14 @@ const Navbar = () => {
             }
         >
            Log In
+        </NavLink></li>
+        <li>   <NavLink
+            to="/addBrand"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+            }
+        >
+           Add brand
         </NavLink></li>
 
     </>

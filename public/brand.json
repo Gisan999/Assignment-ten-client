@@ -1,6 +1,6 @@
 [
     {
-      "id": 1,
+      "id": 6,
       "name": "Apple",
       "category": "Phone",
       "image": "https://i.ibb.co/sR7KmTK/apple.jpg",
@@ -9,7 +9,7 @@
       "slider3": "https://i.ibb.co/phT0p1c/apple3.png"
     },
     {
-      "id": 2,
+      "id": 5,
       "name": "Google",
       "category": "Phone",
       "image": "https://i.ibb.co/9wsj09H/google9.jpg",
@@ -18,7 +18,7 @@
       "slider3": "https://i.ibb.co/2KzqSTj/google3.jpg"
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Huawei",
       "category": "Phone",
       "image": "https://i.ibb.co/b5Jn8CF/huawei9.webp",
@@ -27,7 +27,7 @@
       "slider3": "https://i.ibb.co/bmqGYY4/huawei3.jpg"
     },
     {
-      "id": 4,
+      "id":3,
       "name": "Lenovo",
       "category": "Computer",
       "image": "https://i.ibb.co/SQntVyB/lenovo9.jpg",
@@ -36,7 +36,7 @@
       "slider3": "https://i.ibb.co/XXbVTdH/lenovo3.png"
     },
     {
-      "id": 5,
+      "id":2,
       "name": "Oneplus",
       "category": "Phone",
       "image": "https://i.ibb.co/tLH1WJp/oneplus9.jpg",
@@ -45,7 +45,7 @@
       "slider3": "https://i.ibb.co/kh3pwYY/oneplus3.jpg"
     },
     {
-      "id": 6,
+      "id": 1,
       "name": "Tesla",
       "category": "Phone",
       "image": "https://i.ibb.co/F8FMLzf/tesla9.png",

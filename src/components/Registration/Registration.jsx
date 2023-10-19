@@ -19,7 +19,6 @@ const Registration = () => {
         if (password.length < 6) {
            Swal.fire({
                 position: 'center',
-
                 title:'Password must be at least six digits long',
                 icon: 'warning',
                 showConfirmButton: false,
