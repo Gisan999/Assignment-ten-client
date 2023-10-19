@@ -1,7 +1,31 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo.png'
+import { AuthContext } from '../../Provider/AuthProvider';
+import { useContext } from 'react';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import auth from '../../firebase/firebase.config';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+    const { logIn } = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate();
+
+
+
+
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogle = () => {
+        signInWithPopup(auth, provider)
+        .then(result => {
+            console.log(result);
+            navigate(location?.state ? location.state : '/');
+        })
+        .catch(error => console.error(error))
+    }
+
 
 
     const handleLoginValue = (event) => {
@@ -9,7 +33,18 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
+        logIn(email, password)
+        .then(result => {
+            console.log(result);
+            toast.success('success')
+            navigate(location?.state ? location.state : '/');
+
+        })
+        .catch(error => {
+            console.error(error);
+            toast.error(error.message)
+        })
     }
 
     return (
@@ -28,7 +63,7 @@ const Login = () => {
                             <div className="mt-12 flex flex-col items-center">
                                 <div className="w-full flex-1 mt-8">
                                     <div className="flex flex-col items-center">
-                                        <button
+                                        <button onClick={handleGoogle}
                                             className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-green-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
                                             <div className="bg-white p-2 rounded-full">
                                                 <svg className="w-4" viewBox="0 0 533.5 544.3">
@@ -106,6 +141,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer/>
         </div>
     );
 };

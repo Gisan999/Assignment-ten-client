@@ -1,11 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo.png';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { AuthContext } from '../../Provider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Registration = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const { registerUser, userUpdate } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleRegistrationValue = (event) => {
         event.preventDefault();
@@ -17,9 +22,9 @@ const Registration = () => {
         const check = event.target.terms.checked
 
         if (password.length < 6) {
-           Swal.fire({
+            Swal.fire({
                 position: 'center',
-                title:'Password must be at least six digits long',
+                title: 'Password must be at least six digits long',
                 icon: 'warning',
                 showConfirmButton: false,
                 timer: 2000
@@ -62,6 +67,24 @@ const Registration = () => {
         }
 
         console.log(name, photo, email, password);
+
+        registerUser(email, password)
+            .then(result => {
+                console.log(result);
+                toast.success('Registration Successful');
+                navigate('/')
+
+                userUpdate(name, photo)
+                    .then(result => {
+                        console.log(result);
+                        window.location.reload(false);
+                    })
+                    .catch(error => console.error(error));
+            })
+            .catch(error => {
+                console.error(error);
+                toast.error(error.message);
+            })
 
     }
 
@@ -145,6 +168,7 @@ const Registration = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

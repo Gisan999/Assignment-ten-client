@@ -1,8 +1,18 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from '../../assets/logo.png'
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    console.log(user);
+
+    const handleLogOut = () => {
+        logOut()
+        .then()
+        .catch()
+    }
 
     const navbar = <>
         <li>  <NavLink
@@ -39,7 +49,7 @@ const Navbar = () => {
                 isPending ? "pending" : isActive ? "active" : ""
             }
         >
-           Log In
+            Log In
         </NavLink></li>
         {/* <li>   <NavLink
             to="/addBrand"
@@ -76,38 +86,41 @@ const Navbar = () => {
                     <div className="navbar-end">
                         {/* <a className="btn">Button</a> */}
                         <div className="dropdown  dropdown-end">
-                        <label tabIndex={1} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" />
-                            </div>
-                        </label>
-                        <ul tabIndex={1} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                          <li>name:</li>
-                            <li><a>Settings</a></li>
-                            <li><a>Logout</a></li>
-                        </ul>
+                            <label tabIndex={1} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+
+                                    {
+                                        user ?
+                                            <img src={user.photoURL} />
+                                            :
+
+                                            <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" />
+                                    }
+
+
+
+
+
+
+
+                                </div>
+                            </label>
+                            <ul tabIndex={1} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 space-y-3">
+                                <li>{user?.displayName}</li>
+                              
+
+                                {
+                                    user ?
+                                   <button onClick={handleLogOut} className="btn btn-xs btn-outline btn-primary">logout</button>
+                                    :
+                                   <Link to="/login">
+                                   <button className="btn btn-xs btn-outline btn-secondary w-full">login</button></Link>
+
+                                }
+                            </ul>
+                        </div>
+
                     </div>
-
-
-                    </div>
-
-                    {/* <div className="dropdown  dropdown-end">
-                        <label tabIndex={1} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                            </div>
-                        </label>
-                        <ul tabIndex={1} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
-                            </li>
-                            <li><a>Settings</a></li>
-                            <li><a>Logout</a></li>
-                        </ul>
-                    </div> */}
                 </div>
             </div>
         </div>
