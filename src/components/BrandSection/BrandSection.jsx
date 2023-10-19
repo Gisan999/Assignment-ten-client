@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const BrandSection = ({ brand }) => {
-    const { photo, name, _id } = brand;
+    const { photo, _id } = brand;
 
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const BrandSection = ({ brand }) => {
                 </div>
                 <div className="p-6 text-center">
                     <h4 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-                        {name}
+                        {brand.brand}
                     </h4>
 
                 </div>

@@ -41,14 +41,14 @@ const Navbar = () => {
         >
            Log In
         </NavLink></li>
-        <li>   <NavLink
+        {/* <li>   <NavLink
             to="/addBrand"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : ""
             }
         >
            Add brand
-        </NavLink></li>
+        </NavLink></li> */}
 
     </>
 

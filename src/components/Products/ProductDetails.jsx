@@ -7,6 +7,25 @@ const ProductDetails = () => {
     const details = useLoaderData();
     const { brandName, image, name, price, rating, shortDescription, type } = details;
 
+
+    const handleCart = () => {
+   
+      
+        fetch('http://localhost:5000/cart', {
+            method:"POST",
+            headers: {
+                "content-type": 'application/json'
+            },
+            body: JSON.stringify(details)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+
+    }
+
+
     const handleBuy = () => {
         Swal.fire({
             title: 'you want to buy?',
@@ -39,7 +58,7 @@ const ProductDetails = () => {
                                 </div>
                                 <div className="flex -mx-2 mb-4">
                                     <div className="w-1/2 px-2">
-                                        <button className="w-full btn btn-outline btn-secondary">Add to Cart</button>
+                                        <button onClick={handleCart} className="w-full btn btn-outline btn-secondary">Add to Cart</button>
                                     </div>
                                     <div className="w-1/2 px-2">
                                         <button onClick={handleBuy} className="w-full btn btn-outline btn-success">Buy Now</button>
@@ -112,7 +131,7 @@ const ProductDetails = () => {
                     </div>
                     <div className="max-w-screen-xl mx-auto mt-12">
                         <div className="px-5 lg:px-0">
-                            <img className="w-full " src={headphone} alt="" />
+                            <img className="w-full hover:scale-110 transition duration-500" src={headphone} alt="" />
                         </div>
                     </div>
                 </div>
