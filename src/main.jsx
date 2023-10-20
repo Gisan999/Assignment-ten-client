@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch('https://assignment-ten-server-83pfqrfpc-gisans-projects.vercel.app/brand')
+        loader: () => fetch('https://assignment-ten-server-lyart.vercel.app/brand')
       },
       {
         path: "/addItem",
@@ -48,17 +48,17 @@ const router = createBrowserRouter([
       {
         path: '/brandDetails/:id',
         element: <PrivateRoute><BrandDetails /></PrivateRoute>,
-        loader: ({params})=>fetch(`https://assignment-ten-server-83pfqrfpc-gisans-projects.vercel.app/brand/${params.id}`)
+        loader: ({params})=>fetch(`https://assignment-ten-server-lyart.vercel.app/brand/${params.id}`)
       },
       {
         path: "/products/:id",
         element: <ProductDetails />,
-        loader: ({ params }) => fetch(`https://assignment-ten-server-83pfqrfpc-gisans-projects.vercel.app/product/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-ten-server-lyart.vercel.app/product/${params.id}`)
       },
       {
         path: '/update/:id',
         element: <UpdateProduct />,
-        loader: ({ params }) => fetch(`https://assignment-ten-server-83pfqrfpc-gisans-projects.vercel.app/product/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-ten-server-lyart.vercel.app/product/${params.id}`)
       },
       {
         path:"/addBrand",
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
       {
         path: '/myCart',
         element: <PrivateRoute><MyCart/></PrivateRoute>,
-        loader: ()=> fetch(`https://assignment-ten-server-otcthhxeu-gisans-projects.vercel.app`)
+        loader: ()=> fetch(`https://assignment-ten-server-lyart.vercel.app/cart`)
       },
       {
         path: '/extra',

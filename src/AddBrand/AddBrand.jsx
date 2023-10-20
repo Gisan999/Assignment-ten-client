@@ -16,7 +16,7 @@ const AddBrand = () => {
         const check = { brand, category, photo, photo2, photo3, photo4}
         console.log(check);
 
-        fetch('https://assignment-ten-server-83pfqrfpc-gisans-projects.vercel.app/brand', {
+        fetch('https://assignment-ten-server-lyart.vercel.app/brand', {
             method:"POST",
             headers: {
                 "content-type": 'application/json'

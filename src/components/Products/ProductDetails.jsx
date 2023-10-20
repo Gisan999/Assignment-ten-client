@@ -1,19 +1,24 @@
 import { useLoaderData } from "react-router-dom";
 import headphone from '../../assets/headphone.png'
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const ProductDetails = () => {
+    const {user} = useContext(AuthContext);
+    const {email} = user;
     const details = useLoaderData();
     const { brandName, image, name, price, rating, shortDescription, type } = details;
 
-    const setCart = {image, name, price, type, brandName};
+    const setCart = {image, name, price, type, brandName, email};
+    // console.log(email);
 
 
     const handleCart = () => {
    
       
-        fetch('https://assignment-ten-server-otcthhxeu-gisans-projects.vercel.app', {
+        fetch('https://assignment-ten-server-lyart.vercel.app/cart', {
             method:"POST",
             headers: {
                 "content-type": 'application/json'

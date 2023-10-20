@@ -27,7 +27,7 @@ const UpdateProduct = () => {
         console.log(updateFormData);
 
 
-        fetch(`https://assignment-ten-server-83pfqrfpc-gisans-projects.vercel.app/product/${_id}`, {
+        fetch(`https://assignment-ten-server-lyart.vercel.app/product/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": 'application/json'

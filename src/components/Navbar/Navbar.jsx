@@ -1,11 +1,13 @@
+/* eslint-disable react/prop-types */
 import { Link, NavLink } from "react-router-dom";
 import logo from '../../assets/logo.png'
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 
-const Navbar = () => {
+const Navbar = ({handle, theme}) => {
     const { user, logOut } = useContext(AuthContext);
+
     console.log(user);
 
     const handleLogOut = () => {
@@ -59,13 +61,14 @@ const Navbar = () => {
         >
            Add brand
         </NavLink></li> */}
+        {/* <li onClick={handle}>theme</li> */}
 
     </>
 
     return (
-        <div className="container mx-auto">
-            <div className=" ">
-                <div className="navbar bg-base-100">
+        <div className="bg-white">
+            <div className=" container mx-auto">
+                <div className="navbar bg-base-100 py-8">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -79,11 +82,14 @@ const Navbar = () => {
                         <img src={logo} alt="" />
                     </div>
                     <div className="navbar-center hidden lg:flex">
-                        <ul className="menu menu-horizontal px-1">
+
+                        <ul className={`menu  menu-horizontal px-1   ${theme === 'dark' ? "text-black" :''}`}>
                             {navbar}
                         </ul>
+
                     </div>
                     <div className="navbar-end">
+                    <input onClick={handle} type="checkbox" className="toggle"  />
                         {/* <a className="btn">Button</a> */}
                         <div className="dropdown  dropdown-end">
                             <label tabIndex={1} className="btn btn-ghost btn-circle avatar">

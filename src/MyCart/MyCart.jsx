@@ -1,12 +1,33 @@
 import { useLoaderData } from "react-router-dom";
 import headphone from '../assets/headphone.png'
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const MyCart = () => {
     const cart = useLoaderData();
-    const [carts, setCarts] = useState(cart)
+    const { user } = useContext(AuthContext);
+    const [userCart, setUserCart] = useState([]);
+    // const [carts, setCarts] = useState(userCart)
+    console.log(user.email);
+
+
+    console.log(userCart);
+    useEffect(() => {
+
+        const matchItem = cart?.filter(data => data?.email === user.email);
+        setUserCart(matchItem);
+
+
+        // fetch(`https://assignment-ten-server-lyart.vercel.app/cart`)
+        // .then(res => res.json())
+        // .then(data => {
+        //     console.log(data);
+        // })
+    }, [cart, user])
+
+
 
     const handleDelete = _id => {
         console.log(_id);
@@ -21,7 +42,7 @@ const MyCart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://assignment-ten-server-otcthhxeu-gisans-projects.vercel.app/${_id}`, {
+                fetch(`https://assignment-ten-server-lyart.vercel.app/cart/${_id}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())
@@ -34,22 +55,15 @@ const MyCart = () => {
                                 'success'
                             )
                         }
-
-                        const remaining = cart?.filter(product => product._id !== _id);
-                        setCarts(remaining);
+                        window.location.reload(false);
+                        // const remaining = cart?.filter(product => product._id !== _id);
+                        // setCarts(remaining);
 
 
                     })
             }
         })
 
-        // fetch(`https://assignment-ten-server-otcthhxeu-gisans-projects.vercel.app/${_id}`,{
-        //     method: "DELETE",
-        // })
-        // .then(res => res.json())
-        // .then(data => {
-        //     console.log(data);
-        // })
 
     }
 
@@ -69,7 +83,7 @@ const MyCart = () => {
                         </thead>
                         <tbody>
                             {
-                                carts?.map(data => <tr key={data._id}>
+                                userCart?.map(data => <tr key={data._id}>
 
                                     <td>
                                         <div className="flex items-center space-x-3">
@@ -97,15 +111,15 @@ const MyCart = () => {
                         </tbody>
                     </table>
 
-                 <div className="my-28">
-                 {
-                        carts.length < 1 ?
-                        <h2 className="text-3xl font-semibold text-center "> Please Add Your Desired Product To The List</h2>
-                        :
-                        ''
-                    }
-                    
-                 </div>
+                    <div className="my-28">
+                        {
+                            userCart.length < 1 ?
+                                <h2 className="text-3xl font-semibold text-center "> Please Add Your Desired Product To The List</h2>
+                                :
+                                ''
+                        }
+
+                    </div>
                 </div>
             </div>
             <div className="max-w-screen-xl mx-auto my-20">
