@@ -83,7 +83,7 @@ const Registration = () => {
             })
             .catch(error => {
                 console.error(error);
-                toast.error(error.message);
+                toast.error('This email already exists');
             })
 
     }

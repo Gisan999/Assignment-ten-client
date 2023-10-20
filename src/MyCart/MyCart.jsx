@@ -56,7 +56,7 @@ const MyCart = () => {
 
                                 <th>Product</th>
                                 <th>Price</th>
-                                <th>Category</th>
+                                {/* <th>Category</th> */}
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -80,7 +80,7 @@ const MyCart = () => {
                                     <td>
                                         ${data.price}
                                     </td>
-                                    <td>{data.type}</td>
+                                    {/* <td>{data.type}</td> */}
                                     <th>
                                         <button onClick={() => handleDelete(data._id)}
                                             className="btn btn-ghost animate-spin">X</button>
@@ -89,6 +89,16 @@ const MyCart = () => {
                             }
                         </tbody>
                     </table>
+
+                 <div className="my-28">
+                 {
+                        cart.length < 1 ?
+                        <h2 className="text-3xl font-semibold text-center "> Please Add Your Desired Product To The List</h2>
+                        :
+                        ''
+                    }
+                    
+                 </div>
                 </div>
             </div>
             <div className="max-w-screen-xl mx-auto my-20">

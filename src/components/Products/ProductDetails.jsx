@@ -7,6 +7,8 @@ const ProductDetails = () => {
     const details = useLoaderData();
     const { brandName, image, name, price, rating, shortDescription, type } = details;
 
+    const setCart = {image, name, price, type, brandName};
+
 
     const handleCart = () => {
    
@@ -16,11 +18,20 @@ const ProductDetails = () => {
             headers: {
                 "content-type": 'application/json'
             },
-            body: JSON.stringify(details)
+            body: JSON.stringify(setCart)
         })
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            if(data.acknowledged){
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your product has been added',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
         })
 
     }

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Product from "../Product/Product";
+import pic from '../../assets/watch.png'
 
 const BrandDetails = () => {
     const [selected, setSelected] = useState([]);
@@ -52,17 +53,25 @@ const BrandDetails = () => {
                     </div>
                 </div>
             </div>
+         
 
-            <div className="max-w-screen-xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg: lg:grid-cols-3 gap-5">
 
-                    {
-                        selected?.map(data => <Product key={data._id} product={data}></Product>)
-                    }
+            <div className="flex mt-9">
+                <div className="max-w-screen-xl mx-auto">
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg: lg:grid-cols-3 gap-5">
+
+                        {
+                            selected?.map(data => <Product key={data._id} product={data} selected={selected}></Product>)
+                        }
+                    </div>
+
+
                 </div>
-
-
             </div>
+            <div className="max-w-screen-xl mx-auto my-8">
+        <img className="w-full" src={pic} alt="" />
+      </div>
 
         </div>
     );

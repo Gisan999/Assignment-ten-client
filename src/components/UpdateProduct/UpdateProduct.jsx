@@ -156,7 +156,7 @@ const UpdateProduct = () => {
 
                             </div>
 
-                            <button className="bg-gray-500 text-white font-bold py-[10px] px-4 w-full rounded animate-bounce  hover:bg-gray-600">Update</button>
+                            <button className="bg-gray-500 text-white font-bold py-[10px] px-4 w-full rounded animate-bounce  hover:bg-gray-600">Submit</button>
                         </div>
                     </div>
 

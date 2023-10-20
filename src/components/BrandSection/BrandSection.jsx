@@ -14,15 +14,15 @@ const BrandSection = ({ brand }) => {
     }, [])
 
     return (
-        <div>
+        <div className='flex justify-center'>
            <Link to={`/brandDetails/${_id}`}>
            <div
             data-aos="fade-up"
              className="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
-                <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg h-80 rounded-xl bg-clip-border hover06 ">
+                <div  data-aos="fade-up" className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg h-80 rounded-xl bg-clip-border hover06 ">
                     <img className="w-full h-full" src={photo} />
                 </div>
-                <div className="p-6 text-center">
+                <div  data-aos="fade-up" className="p-6 text-center">
                     <h4 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
                         {brand.brand}
                     </h4>

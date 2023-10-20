@@ -18,6 +18,8 @@ import UpdateProduct from './components/UpdateProduct/UpdateProduct';
 import AddBrand from './AddBrand/AddBrand';
 import ProductDetails from './components/Products/ProductDetails';
 import MyCart from './MyCart/MyCart';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import ExtraSection from './components/ExtraSection/ExtraSection';
 
 
 const router = createBrowserRouter([
@@ -33,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addItem",
-        element: <AddProduct />
+        element: <PrivateRoute><AddProduct /></PrivateRoute>
       },
       {
         path: "/login",
@@ -45,7 +47,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/brandDetails/:id',
-        element: <BrandDetails />,
+        element: <PrivateRoute><BrandDetails /></PrivateRoute>,
         loader: ({params})=>fetch(`http://localhost:5000/brand/${params.id}`)
       },
       {
@@ -64,8 +66,12 @@ const router = createBrowserRouter([
       },
       {
         path: '/myCart',
-        element: <MyCart/>,
+        element: <PrivateRoute><MyCart/></PrivateRoute>,
         loader: ()=> fetch(`http://localhost:5000/cart`)
+      },
+      {
+        path: '/extra',
+        element:<PrivateRoute> <ExtraSection/></PrivateRoute>
       }
      
     ]
