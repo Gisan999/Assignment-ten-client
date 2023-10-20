@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch('http://localhost:5000/brand')
+        loader: () => fetch('https://assignment-ten-server-83pfqrfpc-gisans-projects.vercel.app/brand')
       },
       {
         path: "/addItem",
@@ -48,17 +48,17 @@ const router = createBrowserRouter([
       {
         path: '/brandDetails/:id',
         element: <PrivateRoute><BrandDetails /></PrivateRoute>,
-        loader: ({params})=>fetch(`http://localhost:5000/brand/${params.id}`)
+        loader: ({params})=>fetch(`https://assignment-ten-server-83pfqrfpc-gisans-projects.vercel.app/brand/${params.id}`)
       },
       {
         path: "/products/:id",
         element: <ProductDetails />,
-        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-ten-server-83pfqrfpc-gisans-projects.vercel.app/product/${params.id}`)
       },
       {
         path: '/update/:id',
         element: <UpdateProduct />,
-        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-ten-server-83pfqrfpc-gisans-projects.vercel.app/product/${params.id}`)
       },
       {
         path:"/addBrand",
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
       {
         path: '/myCart',
         element: <PrivateRoute><MyCart/></PrivateRoute>,
-        loader: ()=> fetch(`http://localhost:5000/cart`)
+        loader: ()=> fetch(`https://assignment-ten-server-otcthhxeu-gisans-projects.vercel.app`)
       },
       {
         path: '/extra',

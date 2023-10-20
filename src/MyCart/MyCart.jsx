@@ -1,10 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 import headphone from '../assets/headphone.png'
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 
 const MyCart = () => {
     const cart = useLoaderData();
+    const [carts, setCarts] = useState(cart)
 
     const handleDelete = _id => {
         console.log(_id);
@@ -19,7 +21,7 @@ const MyCart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/cart/${_id}`, {
+                fetch(`https://assignment-ten-server-otcthhxeu-gisans-projects.vercel.app/${_id}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())
@@ -32,11 +34,16 @@ const MyCart = () => {
                                 'success'
                             )
                         }
+
+                        const remaining = cart?.filter(product => product._id !== _id);
+                        setCarts(remaining);
+
+
                     })
             }
         })
 
-        // fetch(`http://localhost:5000/cart/${_id}`,{
+        // fetch(`https://assignment-ten-server-otcthhxeu-gisans-projects.vercel.app/${_id}`,{
         //     method: "DELETE",
         // })
         // .then(res => res.json())
@@ -62,7 +69,7 @@ const MyCart = () => {
                         </thead>
                         <tbody>
                             {
-                                cart?.map(data => <tr key={data._id}>
+                                carts?.map(data => <tr key={data._id}>
 
                                     <td>
                                         <div className="flex items-center space-x-3">
@@ -92,7 +99,7 @@ const MyCart = () => {
 
                  <div className="my-28">
                  {
-                        cart.length < 1 ?
+                        carts.length < 1 ?
                         <h2 className="text-3xl font-semibold text-center "> Please Add Your Desired Product To The List</h2>
                         :
                         ''

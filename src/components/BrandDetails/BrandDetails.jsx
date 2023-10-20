@@ -12,7 +12,7 @@ const BrandDetails = () => {
     const { photo4, photo2, photo3 } = details;
 
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://assignment-ten-server-83pfqrfpc-gisans-projects.vercel.app/product')
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

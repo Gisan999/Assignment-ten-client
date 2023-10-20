@@ -20,7 +20,7 @@ const AddProduct = () => {
         console.log(formData);
 
 
-        fetch(`http://localhost:5000/product`, {
+        fetch(`https://assignment-ten-server-83pfqrfpc-gisans-projects.vercel.app/product`, {
             method: "POST",
             headers: {
                 "content-type": 'application/json'

@@ -13,7 +13,7 @@ const ProductDetails = () => {
     const handleCart = () => {
    
       
-        fetch('http://localhost:5000/cart', {
+        fetch('https://assignment-ten-server-otcthhxeu-gisans-projects.vercel.app', {
             method:"POST",
             headers: {
                 "content-type": 'application/json'
