@@ -1,14 +1,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Product from "../Product/Product";
 import pic from '../../assets/watch.png'
 
 const BrandDetails = () => {
     const [selected, setSelected] = useState([]);
     const details = useLoaderData()
-    console.log(details.brand);
     const { photo4, photo2, photo3 } = details;
 
     useEffect(() => {
@@ -20,10 +19,9 @@ const BrandDetails = () => {
                 const selectItem = data?.filter(item => item.brandName === details.brand)
                 setSelected(selectItem);
             })
+
+
     }, [])
-
-    console.log(selected);
-
 
 
     return (
@@ -53,7 +51,7 @@ const BrandDetails = () => {
                     </div>
                 </div>
             </div>
-         
+
 
 
             <div className="flex mt-9">
@@ -69,9 +67,25 @@ const BrandDetails = () => {
 
                 </div>
             </div>
+
+            <div className="my-28">
+                {
+                    selected.length < 1 ?
+                        <div>
+                            <h2 className="text-3xl font-semibold text-center px-5 md:px-0 "> At the moment we do not have any products of this brand, you can add products if you want</h2>
+                            <div className="flex justify-center mt-7">
+                               <Link to={"/addItem"}>
+                               <button className="btn btn-wide btn-info btn-outline">click here</button></Link>
+                            </div>
+                        </div>
+                        :
+                        ''
+                }
+
+            </div>
             <div className="max-w-screen-xl mx-auto my-8">
-        <img className="w-full" src={pic} alt="" />
-      </div>
+                <img className="w-full" src={pic} alt="" />
+            </div>
 
         </div>
     );

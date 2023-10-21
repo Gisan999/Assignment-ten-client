@@ -14,7 +14,6 @@ const AddBrand = () => {
         const photo3 = form.photo3.value;
         const photo4 = form.photo4.value;
         const check = { brand, category, photo, photo2, photo3, photo4}
-        console.log(check);
 
         fetch('https://assignment-ten-server-lyart.vercel.app/brand', {
             method:"POST",

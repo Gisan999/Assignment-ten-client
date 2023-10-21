@@ -6,7 +6,6 @@ import bg from '../../assets/bg.jpg'
 const UpdateProduct = () => {
 
     const product = useLoaderData();
-    console.log(product);
 
 
 

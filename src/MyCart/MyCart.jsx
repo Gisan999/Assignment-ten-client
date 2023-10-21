@@ -9,22 +9,12 @@ const MyCart = () => {
     const cart = useLoaderData();
     const { user } = useContext(AuthContext);
     const [userCart, setUserCart] = useState([]);
-    // const [carts, setCarts] = useState(userCart)
-    console.log(user.email);
 
-
-    console.log(userCart);
     useEffect(() => {
 
         const matchItem = cart?.filter(data => data?.email === user.email);
         setUserCart(matchItem);
 
-
-        // fetch(`https://assignment-ten-server-lyart.vercel.app/cart`)
-        // .then(res => res.json())
-        // .then(data => {
-        //     console.log(data);
-        // })
     }, [cart, user])
 
 
@@ -56,9 +46,7 @@ const MyCart = () => {
                             )
                         }
                         window.location.reload(false);
-                        // const remaining = cart?.filter(product => product._id !== _id);
-                        // setCarts(remaining);
-
+                      
 
                     })
             }

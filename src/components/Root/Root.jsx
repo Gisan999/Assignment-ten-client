@@ -11,7 +11,6 @@ const Root = () => {
     useEffect(() => {
         if (theme === "dark") {
             document.documentElement.classList.add("dark");
-            // body.style.color =
         } else {
             document.documentElement.classList.remove("dark");
         }

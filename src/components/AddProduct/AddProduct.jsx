@@ -17,7 +17,6 @@ const AddProduct = () => {
 
         const formData = { image, name, brandName, type, price, shortDescription, rating }
 
-        console.log(formData);
 
 
         fetch(`https://assignment-ten-server-lyart.vercel.app/product`, {
