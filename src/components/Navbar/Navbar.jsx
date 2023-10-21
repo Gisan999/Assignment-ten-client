@@ -66,9 +66,9 @@ const Navbar = ({handle, theme}) => {
     </>
 
     return (
-        <div className="bg-white">
+        <div className="">
             <div className=" container mx-auto">
-                <div className="navbar bg-base-100 py-8">
+                <div className="navbar  py-8">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -83,13 +83,15 @@ const Navbar = ({handle, theme}) => {
                     </div>
                     <div className="navbar-center hidden lg:flex">
 
-                        <ul className={`menu  menu-horizontal px-1   ${theme === 'dark' ? "text-black" :''}`}>
+                        <ul className={`menu  menu-horizontal px-1   ${theme === 'dark' ? "text-white" :''}`}>
                             {navbar}
                         </ul>
 
                     </div>
                     <div className="navbar-end">
-                    <input onClick={handle} type="checkbox" className="toggle"  />
+                  <div className="tooltip  tooltip-bottom" data-tip="Theme switch">
+                  <input onClick={handle} type="checkbox" className="toggle"  />
+                  </div>
                         {/* <a className="btn">Button</a> */}
                         <div className="dropdown  dropdown-end">
                             <label tabIndex={1} className="btn btn-ghost btn-circle avatar">

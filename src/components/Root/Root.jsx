@@ -8,28 +8,28 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const Root = () => {
     const [theme, setTheme] = useState("light");
 
-    useEffect(()=> {
-     if(theme === "dark"){
-        document.documentElement.classList.add("dark");
-        // body.style.color =
-     } else {
-        document.documentElement.classList.remove("dark");
-     }
-    },[theme])
+    useEffect(() => {
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+            // body.style.color =
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }, [theme])
 
     const handleThemeSwitch = () => {
         setTheme(theme === "dark" ? "light" : "dark")
     }
 
 
-    const {loading} = useContext(AuthContext);
+    const { loading } = useContext(AuthContext);
 
-    if(loading){
+    if (loading) {
         return <div className="flex justify-center mt-40"> <span className="loading loading-infinity loading-lg"></span></div>
     }
     return (
-        <div className={`bg-white dark:bg-gray-700
-        ${theme === 'dark' ? "text-white" :''}
+        <div className={`bg-white    dark:bg-gray-700
+        ${theme === 'dark' ? "text-white" : ''}
         
         `}>
             <Navbar theme={theme} handle={handleThemeSwitch} />

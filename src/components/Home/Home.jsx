@@ -20,7 +20,7 @@ const Home = () => {
 
 
   return (
-    <div className="">
+    <div className=" cursor-crosshair">
 
       <div data-aos="fade-up">
         <Banner />

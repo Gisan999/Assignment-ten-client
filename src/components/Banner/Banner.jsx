@@ -2,7 +2,7 @@
 
 const Banner = () => {
     return (
-        <div className="bg-sky-100">
+        <div className="bg-sky-100 ">
 
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
                 <div className="flex flex-col items-center justify-between w-full mb-10 lg:flex-row">
@@ -17,7 +17,9 @@ const Banner = () => {
                                 can imagine{' '}
                                 <span className="inline-block text-deep-purple-accent-400">is real</span>
                             </h2>
-                            <p className="text-gray-700 text-base md:text-lg">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. explicabo.</p>
+                            <p className="text-gray-700 text-base md:text-lg">Welcome to our website . Here you will find all kinds of new products from us.
+                                We always try to deliver the products you want.
+                                Buy any product from here and we deliver it with peace of mind.</p>
                         </div>
                         <div className="flex items-center space-x-3">
                             <a href="/" className="w-32 transition duration-300 hover:shadow-lg">

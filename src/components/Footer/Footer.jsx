@@ -9,7 +9,7 @@ const Footer = () => {
         Aos.init();
     }, [])
     return (
-        <div className='bg-yellow-50'>
+        <div className='bg-yellow-50 text-black'>
             <div className="max-w-screen-xl mx-auto px-5 lg:px-0">
                 <footer className="footer pr-10  py-20 flex justify-between">
                     <aside data-aos="fade-up" className='space-y-6'>
