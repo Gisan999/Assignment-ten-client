@@ -6,9 +6,10 @@ import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import auth from '../../firebase/firebase.config';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2';
 
 const Login = () => {
-    const { logIn } = useContext(AuthContext)
+    const { logIn, setLoading } = useContext(AuthContext)
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -43,7 +44,15 @@ const Login = () => {
         })
         .catch(error => {
             console.error(error);
-            toast.error('Email and password do not match')
+            // toast.error('Email and password do not match')
+            setLoading(false)
+            Swal.fire({
+                position: 'top-right',
+                title: `email and password dose not match`,
+                icon: 'warning',
+                showConfirmButton: false,
+                timer: 2000
+            })
         })
     }
 
@@ -141,6 +150,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            
             <ToastContainer/>
         </div>
     );

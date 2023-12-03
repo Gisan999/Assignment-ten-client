@@ -14,7 +14,6 @@ import ErrorPage from './components/ErrorPage/ErrorPage';
 import AuthProvider from './Provider/AuthProvider';
 import BrandDetails from './components/BrandDetails/BrandDetails';
 import UpdateProduct from './components/UpdateProduct/UpdateProduct';
-// import BrandCard from './components/BrandCard/BrandCard';
 import AddBrand from './AddBrand/AddBrand';
 import ProductDetails from './components/Products/ProductDetails';
 import MyCart from './MyCart/MyCart';
@@ -73,7 +72,6 @@ const router = createBrowserRouter([
         path: '/extra',
         element:<PrivateRoute> <ExtraSection/></PrivateRoute>
       }
-     
     ]
   },
 ]);
